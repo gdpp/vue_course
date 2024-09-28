@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div id="app" v-cloak>
+        <label for="name">Enter your name:</label>
+        <input type="text" v-model="player.name">
+
+        <div class="player-info">
+            <p> Player name: {{player.name}} </p>
+            <p> Lives: {{player.lives}}</p>
+            <button @click="downgradeLive"> -1 live</button>
+            <br>
+            {{error}}
+        </div>
+        <div class="hints">
+            <p v-for="(word, idx) in words" :key="word"> {{idx + 1}} - {{word}}</p>
+        </div>
+        <div class="result">
+            <p :class="toggleResult">{{result}}</p>
+            <input type="checkbox" v-model="showResult"> Show Result
+        </div>
+        <p>
+            <a :href="url" target="_blank">Github</a>
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
