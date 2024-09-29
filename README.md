@@ -110,3 +110,27 @@ Follow this roadmap and become a Vue.js expert!
 | Foundations  | Basic topics of vue, like Declarative Render Directives Cycles Conditionals Events and Inputs.                     |
 | Project 1    | CSS3 Prespective Playgrond project.                                                                                |
 | Vue Instance | Topics like Mounting VUE instance, Vue Lifecycle, `beforeCreated`, `created`, `beforeMount`, `mounted`, `updated`. |
+
+
+## Vue Lifecycle Explained
+The Vue.js lifecycle consists of a series of stages that a Vue component goes through from creation to destruction. Here’s a brief overview:
+
+### Creation Phase
+- **`beforeCreate`**: The component is initialized, but data observation and events are not yet set up.
+- **`created`**: Data observation and events are set up. However, the component has not been mounted to the DOM yet, and the `el` property is not accessible.
+
+### Mounting Phase
+- **`beforeMount`**: The template is compiled, but the component has not been inserted into the DOM.
+- **`mounted`**: The component is mounted to the DOM, meaning the template has been rendered, and you can access the DOM elements.
+
+### Updating Phase
+- **`beforeUpdate`**: Called when reactive data changes but before the DOM is patched with the new data.
+- **`updated`**: Called after the DOM is updated with the new data.
+
+### Destruction Phase
+- **`beforeDestroy`**: Called just before the component is destroyed. At this point, the component is still fully functional.
+- **`destroyed`**: The component is destroyed, and all watchers, child components, and event listeners are removed.
+
+These hooks allow you to run code at specific points in a component's lifecycle.
+
+![Vue Lifecycle](https://github.com/user-attachments/assets/534f2613-c2d0-423b-993c-570314d8e3bc)
